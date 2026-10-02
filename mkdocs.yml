@@ -1,0 +1,110 @@
+site_name: Demonstrator Wiki
+
+repo_url: https://www.hsbi.de/
+repo_name: HSBI
+
+theme:
+  name: material
+  language: de
+  icon:
+    logo: material/alpha-e-circle
+  favicon: images/kreis-e.png
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+    - search
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+    - content.tabs.link
+  custom_dir: overrides
+
+nav:
+  - Home: index.md
+  - Sicherheit: Sicherheitsmassnahmen.md
+  - Grundlagen:
+    - Grundlagen/index.md
+    - Sicherheit: Grundlagen/Sicherheit.md
+    - Robotik: Grundlagen/Robotik.md
+    - Vision: Grundlagen/Vision.md
+    - TwinCAT: Grundlagen/TwinCAT.md
+  - Komponenten:
+    - Komponenten/index.md
+    - Roboter: Komponenten/TX40-Staubli.md
+    - Greifer: Komponenten/Greifer-Zimmer.md
+    - XTS: Komponenten/XTS-Beckhoff.md
+    - Kamera 1: Komponenten/MantaG125-AlliedVision.md
+    - Kamera 2: Komponenten/GenieNano-Teledyne.md
+    - Kamera 3: Komponenten/LineaGigE-Teledyne.md
+    - Lichtschranken: Komponenten/Lichtschranken-Sick.md
+    - Schaltschrank: Komponenten/Schaltschrank.md
+  - Ansteuerung:
+    - Ansteuerung/index.md
+    - TwinCAT Installation: Ansteuerung/TwinCAT-Installation.md
+    - Verbindung aufbauen: Ansteuerung/Verbindung.md
+    - Einrichtung der Komponenten:
+      - Ansteuerung/Einrichtung/index.md
+      - Kamera: Ansteuerung/Einrichtung/Kamera-Einrichtung.md
+      - Roboter: Ansteuerung/Einrichtung/Roboter-Einrichtung.md
+      - XTS: Ansteuerung/Einrichtung/XTS-Tool-Window.md
+    - SPS Implementierung:
+      - Ansteuerung/SPS/index.md
+      - Kamera: Ansteuerung/SPS/Kamera-SPS.md
+      - Roboter: Ansteuerung/SPS/Roboter-SPS.md
+      - XTS: Ansteuerung/SPS/XTS-SPS.md
+      - Funktionsbausteine:
+        - FB_Axis: Ansteuerung/SPS/Funktionsbausteine/FB_Axis.md
+        - FB_CaGroup: Ansteuerung/SPS/Funktionsbausteine/FB_CaGroup.md
+        - FB_Mover: Ansteuerung/SPS/Funktionsbausteine/FB_Mover.md
+    - Übersicht Verknüpfungen: Ansteuerung/Ubersicht-Verknupfungen.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra_css:
+  - extras/extra.css
+  - https://unpkg.com/katex@0/dist/katex.min.css
+
+extra_javascript:
+  - extras/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+plugins:
+  - search
+  - callouts:
+      breakless_lists: true
+      title_from_first_bold: true
+
+copyright: >
+  Copyright © 2026 Hochschule Bielefeld
